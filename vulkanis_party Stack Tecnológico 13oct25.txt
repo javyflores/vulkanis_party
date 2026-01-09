@@ -1,0 +1,205 @@
+Stack Tecnológico del Proyecto (Full-Stack)
+Backend:
+Lenguaje : TypeScript
+Framework : NestJS
+ORM : TypeORM
+Base de Datos : PostgreSQL
+Autenticación : JWT (Json Web Token)
+Seguridad : Passport.js, Bcrypt
+Documentación : Swagger UI
+Entorno : Node.js v18+
+Frontend Web:
+Framework : React
+Estilos : CSS / Material UI
+Enrutamiento : React Router DOM
+HTTP Client : Axios
+Estado global : Context API o Zustand / Redux Toolkit (opcional)
+Aplicación Móvil:
+Framework : React Native
+UI Lib : NativeWind o NativeBase
+Enrutamiento : React Navigation
+HTTP Client : Axios
+Notificaciones Push : Firebase Cloud Messaging (FCM) o Expo Notifications
+GPS/Ubicación : react-native-location o @react-native-community/geolocation
+Streaming ("Ventana Mágica"):
+Protocolo : WebRTC
+Backend Signal Server : Node.js + Socket.IO
+Frontend Streaming : React + react-player o webrtc-streamer
+Cliente móvil : React Native + react-native-webrtc
+
+Mapa de la APP
+
+VULKANIS_PARTY
+├── 📁 vulkanis-party-backend
+│ ├── 📄 eslint.config.mjs
+│ ├── 🗂️ nest-cli.json
+│ ├── 🗂️ package-lock.json
+│ ├── 🗂️ package.json
+│ ├── 📜 README.md
+│ ├── 📁 src
+│ │ ├── 📁 actualizaciones-evento
+│ │ │ ├── 🟨 actualizacion-evento.controller.ts
+│ │ │ ├── 🟨 actualizacion-evento.module.ts
+│ │ │ ├── 🟨 actualizacion-evento.service.ts
+│ │ │ ├── 📁 dto
+│ │ │ │ ├── 🟨 create-actualizacion-evento.dto.ts
+│ │ │ │ ├── 🟨 update-actualizacion-evento.dto.ts
+│ │ │ ├── 📁 entities
+│ │ │ │ ├── 🟨 actualizacion-evento.entity.ts
+│ │ ├── 🟨 app.controller.spec.ts
+│ │ ├── 🟨 app.controller.ts
+│ │ ├── 🟨 app.module.ts
+│ │ ├── 🟨 app.service.ts
+│ │ ├── 📁 auth
+│ │ │ ├── 🟨 auth.service.ts
+│ │ ├── 📁 config
+│ │ │ ├── 🟨 typeorm.config.ts
+│ │ ├── 📁 eventos
+│ │ │ ├── 📁 dto
+│ │ │ │ ├── 🟨 create-evento.dto.ts
+│ │ │ │ ├── 🟨 update-evento.dto.ts
+│ │ │ ├── 📁 entities
+│ │ │ │ ├── 🟨 evento.entity.ts
+│ │ │ ├── 🟨 evento.controller.ts
+│ │ │ ├── 🟨 evento.module.ts
+│ │ │ ├── 🟨 evento.service.ts
+│ │ ├── 📁 inventario
+│ │ │ ├── 📁 dto
+│ │ │ │ ├── 🟨 create-inventario-servicio.dto.ts
+│ │ │ │ ├── 🟨 update-inventario-servicio.dto.ts
+│ │ │ ├── 📁 entities
+│ │ │ │ ├── 🟨 inventario-servicio.entity.ts
+│ │ │ ├── 🟨 inventario-servicio.controller.ts
+│ │ │ ├── 🟨 inventario-servicio.service.ts
+│ │ │ ├── 🟨 inventario.module.ts
+│ │ ├── 🟨 main.ts
+│ │ ├── 📁 notificaciones
+│ │ │ ├── 📁 dto
+│ │ │ │ ├── 🟨 create-notificacion.dto.ts
+│ │ │ │ ├── 🟨 update-notificacion.dto.ts
+│ │ │ ├── 📁 entities
+│ │ │ │ ├── 🟨 notificacion.entity.ts
+│ │ │ ├── 🟨 notificacion.controller.ts
+│ │ │ ├── 🟨 notificacion.module.ts
+│ │ │ ├── 🟨 notificacion.service.ts
+│ │ ├── 📁 permisos
+│ │ │ ├── 📁 dto
+│ │ │ │ ├── 🟨 create-permiso.dto.ts
+│ │ │ │ ├── 🟨 update-permiso.dto.ts
+│ │ │ ├── 📁 entities
+│ │ │ │ ├── 🟨 permiso.entity.ts
+│ │ │ ├── 🟨 permiso.controller.ts
+│ │ │ ├── 🟨 permiso.module.ts
+│ │ │ ├── 🟨 permiso.service.ts
+│ │ ├── 📁 personal
+│ │ │ ├── 📁 dto
+│ │ │ │ ├── 🟨 create-perfil-personal.dto.ts
+│ │ │ │ ├── 🟨 update-perfil-personal.dto.ts
+│ │ │ ├── 📁 entities
+│ │ │ │ ├── 🟨 perfil-personal.entity.ts
+│ │ │ ├── 🟨 perfil-personal.controller.ts
+│ │ │ ├── 🟨 perfil-personal.module.ts
+│ │ │ ├── 🟨 perfil-personal.service.ts
+│ │ ├── 📁 roles
+│ │ │ ├── 📁 dto
+│ │ │ │ ├── 🟨 create-rol.dto.ts
+│ │ │ │ ├── 🟨 update-rol.dto.ts
+│ │ │ ├── 📁 entities
+│ │ │ │ ├── 🟨 rol.entity.ts
+│ │ │ ├── 🟨 rol.controller.ts
+│ │ │ ├── 🟨 rol.module.ts
+│ │ │ ├── 🟨 rol.service.ts
+│ │ ├── 📁 servicios
+│ │ │ ├── 📁 dto
+│ │ │ │ ├── 🟨 create-servicio.dto.ts
+│ │ │ │ ├── 🟨 update-servicio.dto.ts
+│ │ │ ├── 📁 entities
+│ │ │ │ ├── 🟨 servicio.entity.ts
+│ │ │ ├── 🟨 servicio.controller.ts
+│ │ │ ├── 🟨 servicio.module.ts
+│ │ │ ├── 🟨 servicio.service.ts
+│ │ ├── 📁 servicios-evento
+│ │ │ ├── 📁 entities
+│ │ │ │ ├── 🟨 servicio-evento.entity.ts
+│ │ ├── 📁 ubicaciones
+│ │ │ ├── 📁 dto
+│ │ │ │ ├── 🟨 create-ubicacion.dto.ts
+│ │ │ │ ├── 🟨 update-ubicacion.dto.ts
+│ │ │ ├── 📁 entities
+│ │ │ │ ├── 🟨 ubicacion-transportista.entity.ts
+│ │ │ ├── 🟨 ubicacion.controller.ts
+│ │ │ ├── 🟨 ubicacion.module.ts
+│ │ │ ├── 🟨 ubicacion.service.ts
+│ │ ├── 📁 usuarios
+│ │ │ ├── 📁 dto
+│ │ │ │ ├── 🟨 create-usuario.dto.ts
+│ │ │ │ ├── 🟨 update-usuario.dto.ts
+│ │ │ ├── 📁 entities
+│ │ │ │ ├── 🟨 usuario.entity.ts
+│ │ │ ├── 🟨 usuarios.controller.ts
+│ │ │ ├── 🟨 usuarios.module.ts
+│ │ │ ├── 🟨 usuarios.service.ts
+│ ├── 📁 test
+│ │ ├── 🟨 app.e2e-spec.ts
+│ │ ├── 🗂️ jest-e2e.json
+│ ├── 🗂️ tsconfig.build.json
+│ ├── 🗂️ tsconfig.json
+├── 📁 vulkanis-party-frontend
+│ ├── 🟨 eslint.config.js
+│ ├── 📄 index.html
+│ ├── 🗂️ package-lock.json
+│ ├── 🗂️ package.json
+│ ├── 📁 public
+│ │ ├── 🖼️ balloons.svg
+│ │ ├── 🖼️ confetti.svg
+│ │ ├── 📄 favicon.ico
+│ │ ├── 📄 favicon_io.zip
+│ │ ├── 📁 galeria
+│ │ │ ├── 🖼️ imagen1.jpg
+│ │ │ ├── 🖼️ imagen2.jpg
+│ │ │ ├── 🖼️ imagen3.jpg
+│ │ │ ├── 🖼️ imagen4.jpg
+│ │ │ ├── 🖼️ imagen5.jpg
+│ │ │ ├── 🖼️ imagen6.png
+│ │ ├── 📁 inventario
+│ │ ├── 📁 personal
+│ │ │ ├── 🖼️ ProductorVicky.jpg
+│ │ ├── 📁 servicios
+│ │ │ ├── 🖼️ servicio1.jpg
+│ │ │ ├── 🖼️ servicio2.jpg
+│ │ │ ├── 🖼️ servicio3.jpg
+│ │ │ ├── 🖼️ servicio4.jpg
+│ │ │ ├── 🖼️ servicio5.jpg
+│ │ │ ├── 🖼️ servicio6.jpg
+│ │ │ ├── 🖼️ servicio7.jpg
+│ │ ├── 📄 vulkanis.bmp
+│ │ ├── 🖼️ vulkanis.jpg
+│ ├── 📜 README.md
+│ ├── 📁 src
+│ │ ├── 🎨 App.css
+│ │ ├── 🟦 App.jsx
+│ │ ├── 📁 assets
+│ │ ├── 📁 components
+│ │ │ ├── 🟦 Button.jsx
+│ │ │ ├── 🟦 Carrusel.jsx
+│ │ │ ├── 🎨 Confetti.css
+│ │ │ ├── 🟦 Confetti.jsx
+│ │ │ ├── 🟦 CotizacionCard.jsx
+│ │ │ ├── 🟦 EmptyState.jsx
+│ │ │ ├── 🟦 Footer.jsx
+│ │ │ ├── 🟦 Header.jsx
+│ │ │ ├── 🟦 MainLayout.jsx
+│ │ │ ├── 🟦 TarjetaDestacado.jsx
+│ │ ├── 🎨 index.css
+│ │ ├── 🟦 main.jsx
+│ │ ├── 📁 pages
+│ │ │ ├── 🟦 ClientDashboard.jsx
+│ │ │ ├── 🟦 CotizacionPage.jsx
+│ │ │ ├── 🟦 DashboardAdmin.jsx
+│ │ │ ├── 🟦 Home.jsx
+│ │ │ ├── 🟦 Login.jsx
+│ │ │ ├── 🟦 Register.jsx
+│ │ │ ├── 🟦 StreamingPage.jsx
+│ │ ├── 📁 services
+│ │ │ ├── 🟨 api.js
+│ ├── 🟨 vite.config.js
